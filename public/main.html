@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>webpack</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://www.gstatic.com/firebasejs/3.7.3/firebase.js"></script>
+    <script>
+    var config = {
+      apiKey: "AIzaSyBGYteMTFmS9jDgm6-4e73_wCMsWW-6kmU",
+      authDomain: "inquid-erp.firebaseapp.com",
+      databaseURL: "https://inquid-erp.firebaseio.com",
+      projectId: "inquid-erp",
+      storageBucket: "inquid-erp.appspot.com",
+      messagingSenderId: "566151398360"
+        };
+        firebase.initializeApp(config);
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                console.log(user);
+            } else {
+                // No user is signed in.
+                window.location.href = "index.html";
+            }
+        });
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+	<script src="https://checkout.stripe.com/checkout.js"></script>
+    <script src="/dist/build.js"></script>
+  </body>
+</html>
